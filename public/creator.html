@@ -1,0 +1,139 @@
+<!-- This is the awful HTML comment syntax -->
+<!DOCTYPE html>
+<!-- Message to browser...I think I am HTML -->
+<html lang="en">
+  <!-- My text is in English -->
+
+  <head>
+    <meta charset="utf-8" />
+    <!-- Binary encoding of characters -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Daily Postcard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- This will come in handy later -->
+
+    <!-- import the webpage's css -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap:200, 300, 400, 600, 700"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="title">Daily Postcard Creator</div>
+    </header>
+
+    <main>
+      <!-- POSTCARD BOX -->
+      <div id="postCard">
+        <!--Image Upload part of the notecard (left side)-->
+        <div class="imgSide">
+          <!--Initial View for the left side-->
+          <div id="initialImg">
+            <div id="dashedBox">
+              <div id="uploadButton">
+                <label for="fileChooser">Choose Image</label>
+                <input
+                  type="file"
+                  multiple="false"
+                  id="fileChooser"
+                  accept="image/png, .jpeg, .jpg, image/gif"
+                  onchange="uploadFile()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!--Final View for the left side (after img upload)-->
+          <div id="finalImg">
+            <div class="imageWrapper">
+              <img id="serverImage" />
+            </div>
+
+            <div id="replaceButton">
+              <label for="fileChooser">Replace Image</label>
+            </div>
+          </div>
+        </div>
+
+        <!--Message part of the notecard (right side)-->
+        <div id="messageSide">
+          <div id="messageBox" contenteditable="true">
+            write your message here!
+          </div>
+        </div>
+      </div>
+
+      <!-- COLOR/FONT OPTIONS AND SHARE BUTTON -->
+      <div id="options">
+        <div id="fontOption">
+          <p>
+            Choose your font
+          </p>
+
+          <ul>
+            <li class="list liIF activeFont" onclick="changeFont(0)">
+              Indie Flower
+            </li>
+            <li class="list liDS inactiveFont" onclick="changeFont(1)">
+              Dancing Script
+            </li>
+            <li class="list liLC inactiveFont" onclick="changeFont(2)">
+              Long Cang
+            </li>
+            <li class="list liHA inactiveFont" onclick="changeFont(3)">
+              Homemade Apple
+            </li>
+          </ul>
+        </div>
+
+        <div id="colorOption">
+          <p>
+            Choose your color
+          </p>
+
+          <div id="colors">
+            <span
+              class="color color1 activeColor"
+              onclick="changeColor(0)"
+            ></span>
+            <span class="color color2" onclick="changeColor(1)"></span>
+            <span class="color color3" onclick="changeColor(2)"></span>
+            <span class="color color4" onclick="changeColor(3)"></span>
+            <span class="color color5" onclick="changeColor(4)"></span>
+            <span class="color color6" onclick="changeColor(5)"></span>
+            <span class="color color7" onclick="changeColor(6)"></span>
+            <span class="color color8" onclick="changeColor(7)"></span>
+            <span class="color color9" onclick="changeColor(8)"></span>
+          </div>
+        </div>
+
+        <div id="shareOption">
+          <span id="shareButton" onclick="shareCard()">Share postcard</span>
+        </div>
+      </div>
+      
+      <!-- POP-UP -->
+      <div id="overlay">
+        <h1 id="xButton" onclick="closePopUp()">&times;</h1>
+        <div id="urlBox">
+            <h1>Share your postcard:</h1>
+            <p id="shareURL" onclick="goToPage()"></p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+      <p class="msg">
+        Made on Glitch!
+      </p>
+      <!-- adds the glitch button at the bottom -->
+      <div class="glitchButton"></div>
+
+      <script src="https://button.glitch.me/button.js"></script>
+      <script src="script.js"></script>
+    </footer>
+  </body>
+</html>

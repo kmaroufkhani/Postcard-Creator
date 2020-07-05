@@ -1,0 +1,363 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Verbana, sans-serif;
+}
+
+main {
+  flex: 1;
+}
+
+/************** Title ***********************/
+.title {
+    font-family: "Dancing Script";
+    font-size: 30px;
+    padding: 10px 20px;
+}
+/***************************************************/
+/***************************************************/
+
+
+/************** PostCard BOX ***********************/
+#postCard {
+    display: flex;
+    background-color: #e6e2cf;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px; /* curved corners */
+    min-height: 300px;
+    padding: 20px;
+}
+
+/********** LEFT SIDE *****************/
+.imgSide {
+    width: 50%;
+    border-right: 2px solid black;
+}
+
+/* INITIAL VIEW */
+#initialImg {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dashedBox {
+    border: 2px dashed black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+}
+
+#initialImg label {
+    font-weight: 600;
+    font-size: large;
+  cursor: pointer;
+}
+
+#fileChooser, #fileChooser2 {
+    display: none;
+}
+/* FINAL VIEW */
+#finalImg {
+    height: 100%;
+    display: none;
+    flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageWrapper {
+    width: 100%;
+  grow: 1;
+}
+
+#serverImage {
+    width: 100%;
+}
+
+#replaceButton {
+    display: flex;
+    justify-content: center;
+}
+
+#replaceButton label {
+    font-weight: 600;
+    font-size: large;
+    border: 2px solid black;
+    padding: 10px;
+}
+/**************/
+
+/**************** RIGHT SIDE ***************/
+#messageSide {
+    width: 50%;
+}
+
+#messageBox {
+  font-family: "Indie Flower";
+  height: 90%;
+  padding: 10px;
+}
+/**************/
+/***************************************************/
+/***************************************************/
+
+
+/************** FONT/COLOR OPTIONS ***********************/
+#options {
+  max-width: 600px;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#options p {
+  margin: 10px 0px;
+  font-weight: 600;
+}
+
+#fontOption ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liIF {
+  font-family: "Indie Flower";
+  cursor: pointer;
+}
+
+.liDS {
+  font-family: "Dancing Script";
+  cursor: pointer;
+}
+
+.liLC {
+  font-family: "Long Cang";
+  cursor: pointer;
+}
+
+.liHA {
+  font-family: "Homemade Apple";
+  cursor: pointer;
+}
+
+.activeFont:before {
+  content: "\2756  ";
+}
+.inactiveFont:before {
+  content: "\2B26  ";
+}
+
+#fontOption {
+  width: 30%;
+}
+
+#colorOption {
+  width: 40%;
+}
+
+#shareOption {
+  width: 30%;
+}
+
+/********************/
+#colors {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+
+.color {
+  width: 35px;
+  height: 35px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.color1 {
+  background-color: #e6e2cf;
+}
+.color2 {
+  background-color: #dbcaac;
+}
+.color3 {
+  background-color: #c9cbb3;
+}
+.color4 {
+  background-color: #bbc9ca;
+}
+.color5 {
+  background-color: #a6a5b5;
+}
+.color6 {
+  background-color: #b5a6ab;
+}
+.color7 {
+  background-color: #eccfcf;
+}
+.color8 {
+  background-color: #eceeeb;
+}
+.color9 {
+  background-color: #bab9b5;
+}
+
+.activeColor {
+  border: solid 2px black;
+  margin: 2px;
+}
+/*********************************/
+#shareOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#shareButton {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 25px;
+  border: solid 2px black;
+  cursor: pointer;
+}
+/***************************************************/
+
+
+/************** Footer ***********************/
+footer {
+    /*
+    position: absolute;
+    bottom: 0;
+    */
+    /* flex item commands */
+    flex-grow: 0;  /* I don't take up any extra space */
+    
+    /* flex container commands */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .glitchButton {
+    margin: .5em;
+  }
+  /***************************************************/
+
+/*********************** POP-UP ***********************/
+#overlay {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+  
+#urlBox {
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  min-height: 250px;
+  width: 700px;
+  text-align: center;
+}
+
+#urlBox h1 {
+  margin-top: 60px;
+}
+
+#shareURL {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 70%;
+  margin: auto;
+}
+
+#xButton {
+  padding: 20px 30px 20px 20px;
+  margin-left: auto;
+  margin-top: 0;
+  font-size: 70px;
+  color: white;
+  cursor: pointer;
+}
+
+/************** TABLET & MOBILE VIEW ***********************/
+
+/************* Tablet View ************/
+@media (max-width: 768px) {
+  #postCard, #options {
+    width: 80%;
+  }
+  
+  #urlBox {
+    width: 80%;
+  }
+  
+  #shareButton {
+    white-space: nowrap;
+  }
+}
+
+/************* Mobile View ************/
+@media (max-width: 600px) {
+  #postCard, #options {
+    flex-direction: column;
+  }
+  
+  .imgSide, #messageSide {
+    width: 100%;
+    border: 0;
+    display: flex;
+    flex: 1;
+    flex-basis: 50%;
+  }
+  
+  #initialImg, #finalImg {
+    flex: 1;
+    height: auto;
+  }
+  #finalImg {
+    border-bottom: 2px solid black;
+  }
+  #replaceButton {
+    margin: 5px 0px;
+  }
+  
+  #messageSide {
+    min-height: 150px;
+  }
+  #messageBox {
+    width: 100%;
+  }
+  
+  #options {
+    margin: 20px 10px;
+  }
+  
+  #fontOption, #colorOption, #shareOption {
+    width: 100%;
+  }
+  #shareOption {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+  
+  #urlBox {
+    width: 90%;
+  }
+}
+/* ****************************************************/
